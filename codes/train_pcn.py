@@ -82,7 +82,7 @@ def PCNConfig():
     #
     __C.CONST                                        = edict()
 
-    __C.CONST.NUM_WORKERS                            = 4    # 8
+    __C.CONST.NUM_WORKERS                            = 2    # 8
     __C.CONST.N_INPUT_POINTS                         = 2048
 
     #
@@ -93,7 +93,7 @@ def PCNConfig():
     __C.DIR.OUT_PATH                                 = '../results'
     __C.DIR.TEST_PATH                                = '../test'
     __C.CONST.DEVICE                                 = '0'   # 双卡则为0,1
-    __C.CONST.WEIGHTS                                = 'results/train_pcn_Log_2023_07_13_08_37_17/checkpoints/ckpt-best.pth' # 'ckpt-best.pth'  # specify a path to run test and inference
+    __C.CONST.WEIGHTS                                = '' # 'ckpt-best.pth'  # specify a path to run test and inference
 
     #
     # Network
@@ -105,10 +105,10 @@ def PCNConfig():
     # Train
     #
     __C.TRAIN                                        = edict()
-    __C.TRAIN.BATCH_SIZE                             = 4   # 48
+    __C.TRAIN.BATCH_SIZE                             = 2   # 48
     __C.TRAIN.N_EPOCHS                               = 100   # 400
     __C.TRAIN.SAVE_FREQ                              = 5    # 25
-    __C.TRAIN.LEARNING_RATE                          = 0.0001   # 0.001
+    __C.TRAIN.LEARNING_RATE                          = 0.00001   # 0.001
     __C.TRAIN.LR_MILESTONES                          = [50, 100, 150, 200, 250]
     __C.TRAIN.LR_DECAY_STEP                          = 50
     __C.TRAIN.WARMUP_STEPS                           = 200

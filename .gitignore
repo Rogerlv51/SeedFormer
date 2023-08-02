@@ -9,3 +9,7 @@ dist/
 *.egg-info/
 
 *.zip
+
+results/
+
+test/
