@@ -1,3 +1,11 @@
 *.ply
 
-_pycache_/
+__pycache__/
+
+build/
+
+dist/
+
+*.egg-info/
+
+*.zip
