@@ -73,9 +73,9 @@ def PCNConfig():
     # Dataset
     #
     __C.DATASET                                      = edict()
-    # Dataset Options: Completion3D, ShapeNet, ShapeNetCars, Completion3DPCCT
-    __C.DATASET.TRAIN_DATASET                        = 'ShapeNet'
-    __C.DATASET.TEST_DATASET                         = 'ShapeNet'
+    # Dataset Options: Completion3D, ShapeNet, ShapeNetCars, Completion3DPCCT, MyData
+    __C.DATASET.TRAIN_DATASET                        = 'MyData'
+    __C.DATASET.TEST_DATASET                         = 'MyData'
 
     #
     # Constants

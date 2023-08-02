@@ -5,6 +5,7 @@ matplotlib
 numpy
 open3d==0.9.0.0
 opencv-python
+transforms3d
 # pprint  python自带无需安装
 scipy
 # torch==1.8.1 最好手动到pytorch官网装
