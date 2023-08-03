@@ -93,7 +93,7 @@ def PCNConfig():
     __C.DIR.OUT_PATH                                 = '../results'
     __C.DIR.TEST_PATH                                = '../test'
     __C.CONST.DEVICE                                 = '0'   # 双卡则为0,1
-    __C.CONST.WEIGHTS                                = '' # 'ckpt-best.pth'  # specify a path to run test and inference
+    # __C.CONST.WEIGHTS                                = '' # 'ckpt-best.pth'  # specify a path to run test and inference
 
     #
     # Network
