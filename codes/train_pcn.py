@@ -105,10 +105,10 @@ def PCNConfig():
     # Train
     #
     __C.TRAIN                                        = edict()
-    __C.TRAIN.BATCH_SIZE                             = 2   # 48
-    __C.TRAIN.N_EPOCHS                               = 100   # 400
+    __C.TRAIN.BATCH_SIZE                             = 4   # 48
+    __C.TRAIN.N_EPOCHS                               = 400   # 400
     __C.TRAIN.SAVE_FREQ                              = 5    # 25
-    __C.TRAIN.LEARNING_RATE                          = 0.00001   # 0.001
+    __C.TRAIN.LEARNING_RATE                          = 0.0001   # 0.001
     __C.TRAIN.LR_MILESTONES                          = [50, 100, 150, 200, 250]
     __C.TRAIN.LR_DECAY_STEP                          = 50
     __C.TRAIN.WARMUP_STEPS                           = 200

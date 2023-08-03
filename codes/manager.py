@@ -178,8 +178,8 @@ class Manager:
                 n_itr = (epoch_idx - 1) * n_batches + batch_idx
 
                 # training record
-                message = '{:d} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f}'.format(n_itr, cd_pc_item, cd_p1_item, cd_p2_item, cd_p3_item, partial_item)
-                self.train_record(message, show_info=True)
+                # message = '{:d} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f}'.format(n_itr, cd_pc_item, cd_p1_item, cd_p2_item, cd_p3_item, partial_item)
+                # self.train_record(message, show_info=True)
 
             # avg cds
             avg_cdc = total_cd_pc / n_batches
