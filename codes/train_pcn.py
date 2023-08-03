@@ -112,7 +112,7 @@ def PCNConfig():
     __C.TRAIN.LR_MILESTONES                          = [50, 100, 150, 200, 250]
     __C.TRAIN.LR_DECAY_STEP                          = 50
     __C.TRAIN.WARMUP_STEPS                           = 200
-    __C.TRAIN.WARMUP_EPOCHS                          = 5   # 20
+    __C.TRAIN.WARMUP_EPOCHS                          = 20   # 20
     __C.TRAIN.GAMMA                                  = .5
     __C.TRAIN.BETAS                                  = (.9, .999)
     __C.TRAIN.WEIGHT_DECAY                           = 0

@@ -20,48 +20,15 @@ parser.add_argument('--output', type=int, default=False, help='Output testing re
 parser.add_argument('--pretrained', type=str, default='', help='Pretrained path for testing.')
 args = parser.parse_args()
 
-def PCNConfig():
+def MyConfig():
     __C                                              = edict()
     cfg                                              = __C
-
-    #
-    # Dataset Config
-    #
-    __C.DATASETS                                     = edict()
-    __C.DATASETS.COMPLETION3D                        = edict()
-    __C.DATASETS.COMPLETION3D.CATEGORY_FILE_PATH     = './datasets/Completion3D.json'
-    __C.DATASETS.COMPLETION3D.PARTIAL_POINTS_PATH    = '/path/to/datasets/Completion3D/%s/partial/%s/%s.h5'
-    __C.DATASETS.COMPLETION3D.COMPLETE_POINTS_PATH   = '/path/to/datasets/Completion3D/%s/gt/%s/%s.h5'
-    __C.DATASETS.SHAPENET                            = edict()
-    __C.DATASETS.SHAPENET.CATEGORY_FILE_PATH         = './datasets/ShapeNet.json'
-    __C.DATASETS.SHAPENET.N_RENDERINGS               = 8
-    __C.DATASETS.SHAPENET.N_POINTS                   = 2048
-    __C.DATASETS.SHAPENET.PARTIAL_POINTS_PATH        = 'data/ShapeNetCompletion/%s/partial/%s/%s/%02d.pcd'
-    __C.DATASETS.SHAPENET.COMPLETE_POINTS_PATH       = 'data/ShapeNetCompletion/%s/complete/%s/%s.pcd'
-
-    #
-    # Dataset
-    #
-    __C.DATASET                                      = edict()
-    # Dataset Options: Completion3D, ShapeNet, ShapeNetCars, Completion3DPCCT
-    __C.DATASET.TRAIN_DATASET                        = 'ShapeNet'
-    __C.DATASET.TEST_DATASET                         = 'ShapeNet'
 
     #
     # Constants
     #
     __C.CONST                                        = edict()
 
-    __C.CONST.NUM_WORKERS                            = 1    # 8
-    __C.CONST.N_INPUT_POINTS                         = 2048
-
-    #
-    # Directories
-    #
-
-    __C.DIR                                          = edict()
-    __C.DIR.OUT_PATH                                 = '../results'
-    __C.DIR.TEST_PATH                                = '../test'
     __C.CONST.DEVICE                                 = '0'   # 双卡则为0,1
     __C.CONST.WEIGHTS                                = 'results/train_pcn_Log_2023_07_13_08_37_17/checkpoints/ckpt-best.pth' # 'ckpt-best.pth'  # specify a path to run test and inference
 
@@ -70,29 +37,6 @@ def PCNConfig():
     #
     __C.NETWORK                                      = edict()
     __C.NETWORK.UPSAMPLE_FACTORS                     = [1, 4, 8] # 16384
-
-    #
-    # Train
-    #
-    __C.TRAIN                                        = edict()
-    __C.TRAIN.BATCH_SIZE                             = 4   # 48
-    __C.TRAIN.N_EPOCHS                               = 100   # 400
-    __C.TRAIN.SAVE_FREQ                              = 5    # 25
-    __C.TRAIN.LEARNING_RATE                          = 0.0001   # 0.001
-    __C.TRAIN.LR_MILESTONES                          = [50, 100, 150, 200, 250]
-    __C.TRAIN.LR_DECAY_STEP                          = 50
-    __C.TRAIN.WARMUP_STEPS                           = 200
-    __C.TRAIN.WARMUP_EPOCHS                          = 5   # 20
-    __C.TRAIN.GAMMA                                  = .5
-    __C.TRAIN.BETAS                                  = (.9, .999)
-    __C.TRAIN.WEIGHT_DECAY                           = 0
-    __C.TRAIN.LR_DECAY                               = 150
-
-    #
-    # Test
-    #
-    __C.TEST                                         = edict()
-    __C.TEST.METRIC_NAME                             = 'ChamferDistance'
 
 
     return cfg
@@ -136,7 +80,7 @@ def test_net(cfg, input_path):
     write_ply('codes/predict.ply', pred[0,:].detach().cpu().numpy(), ['x', 'y', 'z'])
 
 if __name__ == '__main__':
-    cfg = PCNConfig()
+    cfg = MyConfig()
     test_net(cfg, "codes/data/ShapeNetCompletion/val/partial/02691156/4bae467a3dad502b90b1d6deb98feec6/00.pcd")
 
 
