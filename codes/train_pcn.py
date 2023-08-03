@@ -67,7 +67,7 @@ def PCNConfig():
     __C.DATASETS.SHAPENET.N_RENDERINGS               = 1
     __C.DATASETS.SHAPENET.N_POINTS                   = 2048
     __C.DATASETS.SHAPENET.PARTIAL_POINTS_PATH        = 'data/MyData/%s/partial/%s/%s.ply'
-    __C.DATASETS.SHAPENET.COMPLETE_POINTS_PATH       = 'data/MyData/%s/complete/%s/%s.ply'
+    __C.DATASETS.SHAPENET.COMPLETE_POINTS_PATH       = 'data/MyData/%s/completion/%s/%s.ply'
 
     #
     # Dataset
