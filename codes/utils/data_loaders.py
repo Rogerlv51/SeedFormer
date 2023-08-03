@@ -10,6 +10,7 @@ from enum import Enum, unique
 from tqdm import tqdm
 from utils.io import IO
 import os
+from FPS import farthest_point_sample
 
 label_mapping = {
     3: '03001627',
@@ -96,6 +97,12 @@ class Dataset(torch.utils.data.dataset.Dataset):
             # print(file_path)
             data[ri] = IO.get(file_path).astype(np.float32)
 
+            # 先采样到统一的点数
+            data[ri] = torch.from_numpy(data[ri])
+            # 注意在这里最远点采样，不能直接用pointnet的fps函数，因为支持cuda，而我们这里的数据是cpu的
+            data[ri] = farthest_point_sample(data[ri], 2048)
+            data[ri] = data[ri].numpy().astype(np.float32)
+            
         # apply transforms
         if self.transforms is not None:
             data = self.transforms(data)

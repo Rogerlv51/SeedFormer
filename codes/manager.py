@@ -102,7 +102,7 @@ class Manager:
 
     def unpack_data(self, data):
 
-        if self.dataset == 'ShapeNet':
+        if self.dataset == 'ShapeNet' or self.dataset == 'MyData':
             partial = data['partial_cloud']
             gt = data['gtcloud']
         elif self.dataset == 'ShapeNet55':
@@ -265,7 +265,7 @@ class Manager:
 
     def test(self, cfg, model, test_data_loader, outdir, mode=None):
 
-        if self.dataset == 'ShapeNet':
+        if self.dataset == 'ShapeNet' or self.dataset == 'MyData':
             self.test_pcn(cfg, model, test_data_loader, outdir)
         elif self.dataset == 'ShapeNet55':
             self.test_shapenet55(cfg, model, test_data_loader, outdir, mode)
