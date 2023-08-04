@@ -30,7 +30,7 @@ def MyConfig():
     __C.CONST                                        = edict()
 
     __C.CONST.DEVICE                                 = '0'   # 双卡则为0,1
-    __C.CONST.WEIGHTS                                = 'results/train_pcn_Log_2023_07_13_08_37_17/checkpoints/ckpt-best.pth' # 'ckpt-best.pth'  # specify a path to run test and inference
+    __C.CONST.WEIGHTS                                = 'results/train_pcn_Log_2023_08_03_09_36_06/checkpoints/ckpt-best.pth' # 'ckpt-best.pth'  # specify a path to run test and inference
 
     #
     # Network
@@ -81,7 +81,7 @@ def test_net(cfg, input_path):
 
 if __name__ == '__main__':
     cfg = MyConfig()
-    test_net(cfg, "codes/data/ShapeNetCompletion/val/partial/02691156/4bae467a3dad502b90b1d6deb98feec6/00.pcd")
+    test_net(cfg, "codes/2023-07-31_17_31_12-Teeth-11.ply")
 
 
 
