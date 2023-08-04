@@ -8,4 +8,4 @@ opencv-python
 transforms3d
 # pprint  python自带无需安装
 scipy
-# torch==1.8.1 最好手动到pytorch官网装
+torch==1.8.1
