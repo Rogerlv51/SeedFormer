@@ -30,7 +30,7 @@ def MyConfig():
     __C.CONST                                        = edict()
 
     __C.CONST.DEVICE                                 = '0'   # 双卡则为0,1
-    __C.CONST.WEIGHTS                                = 'results/train_pcn_Log_2023_08_03_09_36_06/checkpoints/ckpt-best.pth' # 'ckpt-best.pth'  # specify a path to run test and inference
+    __C.CONST.WEIGHTS                                = 'results/train_pcn_Log_2023_08_17_03_50_19/checkpoints/ckpt-best.pth' # 'ckpt-best.pth'  # specify a path to run test and inference
 
     #
     # Network
